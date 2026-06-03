@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%; /* #F8FAFC */
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    /* Primary: Deep Professional Blue #0F4C81 */
+    --primary: 208 79% 28%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 214.3 31.8% 91.4%;
+    --secondary-foreground: 222.2 84% 4.9%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 84% 4.9%;
+
+    /* Danger: Rose/Red #E11D48 */
+    --destructive: 347 77% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Warning: Amber #F59E0B */
+    --warning: 38 92% 50%;
+    --warning-foreground: 210 40% 98%;
+
+    /* Success: Emerald Green #10B981 */
+    --success: 160 84% 39%;
+    --success-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 208 79% 28%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 222.2 84% 4.9%;
+    --sidebar-primary: 208 79% 28%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 40% 96.1%;
+    --sidebar-accent-foreground: 222.2 84% 4.9%;
+    --sidebar-border: 214.3 31.8% 91.4%;
+    --sidebar-ring: 208 79% 28%;
+
+    --chart-1: 208 79% 28%; /* Primary Blue */
+    --chart-2: 160 84% 39%; /* Success Green */
+    --chart-3: 38 92% 50%; /* Warning Amber */
+    --chart-4: 347 77% 50%; /* Danger Red */
+    --chart-5: 215 16% 47%; /* Muted */
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 208 79% 50%;
+    --primary-foreground: 222.2 84% 4.9%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 347 77% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 210 40% 98%;
+
+    --success: 160 84% 39%;
+    --success-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 208 79% 50%;
+
+    --sidebar-background: 222.2 84% 4.9%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 208 79% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 217.2 32.6% 17.5%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217.2 32.6% 17.5%;
+    --sidebar-ring: 208 79% 50%;
+
+    --chart-1: 208 79% 50%;
+    --chart-2: 160 84% 45%;
+    --chart-3: 38 92% 55%;
+    --chart-4: 347 77% 55%;
+    --chart-5: 215 20% 65%;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  section[aria-label='Notifications alt+T'] {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  @media print {
+    @page {
+      size: A4 portrait;
+      margin: 8mm;
+    }
+
+    body {
+      background: white !important;
+      color: black !important;
+      font-size: 10px !important;
+      line-height: 1.2 !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    .no-print {
+      display: none !important;
+    }
+
+    .print-only {
+      display: block !important;
+    }
+
+    .print-break-inside {
+      page-break-inside: avoid;
+    }
+    .sanitary-report-print {
+      box-shadow: none !important;
+      border: 0 !important;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .sanitary-report-print,
+    .sanitary-report-print * {
+      color: #000 !important;
+    }
+    .sanitary-report-header {
+      padding: 0 0 4mm 0 !important;
+      margin: 0 !important;
+      page-break-after: avoid;
+    }
+    .sanitary-report-body {
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+    .sanitary-report-system {
+      font-size: 9px !important;
+      letter-spacing: 0.08em !important;
+      margin-bottom: 1mm !important;
+    }
+    .sanitary-report-title {
+      font-size: 15px !important;
+      line-height: 1.1 !important;
+      margin: 0 !important;
+    }
+    .sanitary-report-company,
+    .sanitary-report-meta {
+      font-size: 9px !important;
+      line-height: 1.15 !important;
+    }
+    .sanitary-report-summary {
+      font-size: 9px !important;
+      line-height: 1.1 !important;
+      margin-bottom: 2mm !important;
+    }
+    .sanitary-report-section {
+      margin-top: 3mm !important;
+      padding: 3mm !important;
+      border: 1px solid #000 !important;
+      border-radius: 0 !important;
+      page-break-inside: avoid;
+    }
+    .sanitary-report-section-break {
+      page-break-before: always;
+      break-before: page;
+    }
+    .sanitary-report-section-header {
+      padding-bottom: 2mm !important;
+      margin-bottom: 2mm !important;
+    }
+    .sanitary-report-table-wrapper {
+      border: 1px solid #000 !important;
+      border-radius: 0 !important;
+      overflow: hidden !important;
+      page-break-inside: avoid;
+    }
+    .sanitary-report-table {
+      width: 100% !important;
+      border-collapse: collapse !important;
+      table-layout: fixed !important;
+      font-size: 8.5px !important;
+      line-height: 1.1 !important;
+    }
+    .sanitary-report-table thead th,
+    .sanitary-report-table tbody td {
+      padding: 2px 4px !important;
+      border: 1px solid #000 !important;
+      vertical-align: top !important;
+      word-break: break-word !important;
+      hyphens: auto !important;
+    }
+    .sanitary-report-table tbody td {
+      padding-top: 6px !important;
+      padding-bottom: 6px !important;
+      line-height: 1.2 !important;
+    }
+    .sanitary-report-table thead th {
+      font-size: 8px !important;
+      font-weight: 700 !important;
+      text-align: center !important;
+    }
+    .sanitary-report-row {
+      page-break-inside: avoid;
+      break-inside: avoid;
+      height: auto !important;
+    }
+    .sanitary-col-date {
+      width: 12% !important;
+    }
+    .sanitary-col-task {
+      width: 27% !important;
+    }
+    .sanitary-col-responsible {
+      width: 20% !important;
+    }
+    .sanitary-col-observations {
+      width: 17% !important;
+    }
+    .sanitary-col-signature {
+      width: 24% !important;
+    }
+    .sanitary-signature-line {
+      display: block !important;
+      width: 115% !important;
+      border-bottom: 1px solid #000 !important;
+      line-height: 0 !important;
+      min-height: 6px !important;
+    }
+    .sanitary-report-footer {
+      margin-top: 2mm !important;
+      padding: 2.5mm 3mm !important;
+      gap: 2mm !important;
+      font-size: 8.5px !important;
+      line-height: 1.1 !important;
+      page-break-inside: avoid;
+    }
+    .sanitary-report-footer p {
+      margin: 0 !important;
+    }
+    .shadow-sm,
+    .shadow-md,
+    .shadow-lg {
+      box-shadow: none !important;
+      border: 1px solid #e2e8f0 !important;
+    }
+  }
+}
+
+@layer utilities {
+  .animate-accordion-down {
+    animation: accordion-down 0.2s ease-out;
+  }
+  .animate-accordion-up {
+    animation: accordion-up 0.2s ease-out;
+  }
+  .animate-fade-in {
+    animation: fade-in 0.3s ease-out;
+  }
+  .animate-fade-out {
+    animation: fade-out 0.3s ease-out;
+  }
+  .animate-slide-up {
+    animation: slide-up 0.4s ease-out;
+  }
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes fade-out {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  @keyframes slide-up {
+    from {
+      transform: translateY(10px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
